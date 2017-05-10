@@ -1,0 +1,367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Wallaroo Home</title>
+<style type="text/css">
+.sa {
+	text-align: right;
+}
+body {
+	background-image: url(graphics/background1.png);
+	background-repeat: no-repeat;
+	text-align: left;
+	left: 50%;
+	margin-left: -400px;
+	position: relative;
+	top: 0px;
+	width: 800px;
+}
+.text {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.justify {
+	text-align: justify;
+}
+.font {
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: justify;
+}
+a img {
+	border: none;
+	text-align: right;
+}
+.border {
+	text-align: left;
+	margin-left: -550px;
+}
+.top {
+	text-align: right;
+}
+        .captionOrange, .captionBlack
+        {
+            color: #fff;
+            font-size: 20px;
+			font-family:Arial, Helvetica, sans-serif;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 0px;
+        }
+        .captionOrange
+        {
+            background: #578db9;
+			background-color: rgba(87, 141, 185, 0.55)
+        }
+        .captionBlack
+        {
+        	font-size:16px;
+            background: #000;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        a.captionOrange, A.captionOrange:active, A.captionOrange:visited
+        {
+        	color: #ffffff;
+        	text-decoration: none;
+        }
+        a.captionOrange:hover
+        {
+            color: #eb5100;
+            text-decoration: underline;
+            background-color: #eeeeee;
+            background-color: rgba(238, 238, 238, 0.7);
+        }
+</style>
+<script type="text/javascript">
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+ <!-- it works the same with all jquery version from 1.x to 2.x -->
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <!-- use jssor.slider.mini.js (39KB) or jssor.sliderc.mini.js (31KB, with caption, no slideshow) or jssor.sliders.mini.js (26KB, no caption, no slideshow) instead for release -->
+    <!-- jssor.slider.mini.js = jssor.sliderc.mini.js = jssor.sliders.mini.js = (jssor.core.js + jssor.utils.js + jssor.slider.js) -->
+    <script type="text/javascript" src="js/jssor.core.js"></script>
+    <script type="text/javascript" src="js/jssor.utils.js"></script>
+    <script type="text/javascript" src="js/jssor.slider.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            //Reference http://www.jssor.com/development/slider-with-slideshow-jquery.html
+            //Reference http://www.jssor.com/development/tool-slideshow-transition-viewer.html
+
+
+            var _SlideshowTransitions = [
+            //["Switch"]
+                { $Duration: 1400, $Zoom: 1.5, $FlyDirection: 1, $Easing: { $Left: $JssorEasing$.$EaseInWave, $Zoom: $JssorEasing$.$EaseInSine }, $ScaleHorizontal: 0.25, $Opacity: 2, $ZIndex: -10, $Brother: { $Duration: 1400, $Zoom: 1.5, $FlyDirection: 2, $Easing: { $Left: $JssorEasing$.$EaseInWave, $Zoom: $JssorEasing$.$EaseInSine }, $ScaleHorizontal: 0.25, $Opacity: 2, $ZIndex: -10} }
+            //["Doors"]
+                , { $Duration: 1500, $Cols: 2, $FlyDirection: 1, $ChessMode: { $Column: 3 }, $Easing: { $Left: $JssorEasing$.$EaseInOutCubic }, $ScaleHorizontal: 0.5, $Opacity: 2, $Brother: { $Duration: 1500, $Opacity: 2} }
+            ];
+
+            var _CaptionTransitions = [
+            //CLIP|TB
+            {$Duration: 900, $Clip: 12, $Easing: $JssorEasing$.$EaseInOutCubic },
+
+            //ZMF|10
+            {$Duration: 600, $Zoom: 11, $Easing: { $Zoom: $JssorEasing$.$EaseInExpo, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 },
+
+            ];
+
+            var options = {
+                $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $AutoPlaySteps: 1,                                  //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
+                $AutoPlayInterval: 10000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $PauseOnHover: 1,                               //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, default value is 1
+
+                $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+                $SlideDuration: 500,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
+                //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+                //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
+                $DisplayPieces: 1,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+                $ParkingPosition: 0,                                //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+                $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+                $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+                $DragOrientation: 1,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+
+                $SlideshowOptions: {                                //[Optional] Options to specify and enable slideshow or not
+                    $Class: $JssorSlideshowRunner$,                 //[Required] Class to create instance of slideshow
+                    $Transitions: _SlideshowTransitions,            //[Required] An array of slideshow transitions to play slideshow
+                    $TransitionsOrder: 1,                           //[Optional] The way to choose transition to play slide, 1 Sequence, 0 Random
+                    $ShowLink: true                                    //[Optional] Whether to bring slide link on top of the slider when slideshow is running, default value is false
+                },
+
+                $CaptionSliderOptions: {                            //[Optional] Options which specifies how to animate caption
+                    $Class: $JssorCaptionSlider$,                   //[Required] Class to create instance to animate caption
+                    $CaptionTransitions: _CaptionTransitions,       //[Required] An array of caption transitions to play caption, see caption transition section at jssor slideshow transition builder
+                    $PlayInMode: 1,                                 //[Optional] 0 None (no play), 1 Chain (goes after main slide), 3 Chain Flatten (goes after main slide and flatten all caption animations), default value is 1
+                    $PlayOutMode: 3                                 //[Optional] 0 None (no play), 1 Chain (goes before main slide), 3 Chain Flatten (goes before main slide and flatten all caption animations), default value is 1
+                },
+
+                $BulletNavigatorOptions: {                                //[Optional] Options to specify and enable navigator or not
+                    $Class: $JssorBulletNavigator$,                       //[Required] Class to create navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 0,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
+                    $Lanes: 1,                                      //[Optional] Specify lanes to arrange items, default value is 1
+                    $SpacingX: 10,                                   //[Optional] Horizontal space between each item in pixel, default value is 0
+                    $SpacingY: 10,                                   //[Optional] Vertical space between each item in pixel, default value is 0
+                    $Orientation: 1                                 //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+                },
+
+                $ArrowNavigatorOptions: {
+                    $Class: $JssorArrowNavigator$,              //[Requried] Class to create arrow navigator instance
+                    $ChanceToShow: 2                                //[Required] 0 Never, 1 Mouse Over, 2 Always
+                }
+            };
+
+            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizes
+            function ScaleSlider() {
+                var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
+                if (parentWidth)
+                    jssor_slider1.$SetScaleWidth(Math.min(parentWidth, 600));
+                else
+                    window.setTimeout(ScaleSlider, 30);
+            }
+
+            ScaleSlider();
+
+            if (!navigator.userAgent.match(/(iPhone|iPod|iPad|BlackBerry|IEMobile)/)) {
+                $(window).bind('resize', ScaleSlider);
+            }
+
+
+            //if (navigator.userAgent.match(/(iPhone|iPod|iPad)/)) {
+            //    $(window).bind("orientationchange", ScaleSlider);
+            //}
+            //responsive code end
+        });
+    </script>
+</head>
+
+<body onload="MM_preloadImages('graphics/facebook1.png','graphics/twitter1.png','graphics/youtube1.png','graphics/tumblr1.png','graphics/google1.png','graphics/buttons/food1.png','graphics/buttons/attractions1.png','graphics/buttons/services1.png','graphics/buttons/events1.png','graphics/buttons/top1.png','img/get1.png')">
+<table width="834" border="0" align="left" cellpadding="0">
+  <tr>
+    <td width="456"><img src="graphics/logo.png" width="455" height="232" /></td>
+    <td width="175">&nbsp;</td>
+    <td width="200" class="sa"><p>&nbsp;</p>
+      <p><img src="graphics/sa.png" width="76" height="80" /></p>
+      <table width="200" border="0" cellpadding="0">
+        <tr>
+          <td width="30"><a href="https://www.facebook.com/pieronewallaroo" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('facebook','','graphics/facebook1.png',1)"><img src="graphics/facebook.png" width="19" height="34" id="facebook" /></a></td>
+          <td width="46"><a href="https://twitter.com/" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('twitter','','graphics/twitter1.png',1)"><img src="graphics/twitter.png" width="40" height="25" id="twitter" /></a></td>
+          <td width="38"><a href="http://www.youtube.com/" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('youtube','','graphics/youtube1.png',1)"><img src="graphics/youtube.png" width="33" height="39" id="youtube" /></a></td>
+          <td width="36"><a href="https://www.tumblr.com/" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('tumblr','','graphics/tumblr1.png',1)"><img src="graphics/tumblr.png" width="29" height="37" id="tumblr" /></a></td>
+          <td width="38"><a href="https://plus.google.com/" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('google','','graphics/google1.png',1)"><img src="graphics/google.png" width="35" height="31" id="google" /></a></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td colspan="3"><table width="834" border="0" cellpadding="0">
+      <tr>
+        <td><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('explore','','graphics/buttons/explore1.png',0)"><img src="graphics/buttons/explore.png" width="159" height="67" id="explore" cellpadding="0" /></a><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('food','','graphics/buttons/food1.png',1)"><img src="graphics/buttons/food.png" width="123" height="67" id="food" /></a><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('attractions','','graphics/buttons/attractions1.png',1)"><img src="graphics/buttons/attractions.png" width="227" height="67" id="attractions" /></a><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('services','','graphics/buttons/services1.png',1)"><img src="graphics/buttons/services.png" width="180" height="67" id="services" /></a><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('events','','graphics/buttons/events1.png',1)"><img src="graphics/buttons/events.png" width="140" height="67" id="events" /></a></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="600" colspan="3"><table width="834" border="0" cellspacing="0" cellpadding="0" style="padding-top:7px">
+        <tr><td width="600">
+<!-- Jssor Slider Begin -->
+    <!-- You can move inline styles to css file or css block. -->
+      
+      <div id="slider1_container" style="position: relative; width: 600px;
+        height: 300px; overflow: hidden;">
+        <!-- Slides Container -->
+        <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 600px; height: 300px;
+            overflow: hidden;">
+            <div>
+                <a u=image href="#"><img src="img/beach.png" /></a>
+                <div u=caption t="*" class="captionOrange"  style="position:absolute; left:20px; top: 30px; width:300px; height:30px;"> 
+                Welcome to Wallaroo
+                </div>
+            </div>
+            <div>
+                <a u=image href="#"><img src="img/night.png" /></a>
+                <div u=caption t="*" class="captionOrange"  style="position:absolute; left:20px; top: 30px; width:300px; height:30px;"> 
+                Nightfall at Wallaroo Bay
+                </div>
+            </div>
+            <div>
+                <a u=image href="#"><img src="img/hotel.png" /></a>
+                <div u=caption t="*" class="captionOrange"  style="position:absolute; left:20px; top: 30px; width:300px; height:30px;"> 
+                Coopers Alehouse Restaurant
+                </div>
+            </div>
+            <div>
+                <a u=image href="#"><img src="img/oyster.png" /></a>
+                <div u=caption t="*" class="captionOrange"  style="position:absolute; left:20px; top: 30px; width:300px; height:30px;"> 
+                Finest Coastal Cuisine
+                </div>
+            </div>
+            <div>
+                <a u=image href="#"><img src="img/food.png" /></a>
+                <div u=caption t="*" class="captionOrange"  style="position:absolute; left:20px; top: 30px; width:300px; height:30px;"> 
+                Hooked on Fish and Chips
+                </div>
+            </div>
+            <div>
+                <a u=image href="#"><img src="img/ferry.png" /></a>
+                <div u=caption t="*" class="captionOrange"  style="position:absolute; left:20px; top: 30px; width:300px; height:30px;"> 
+                Cruise on the Sea SA Ferry
+                </div>
+            </div>
+            <div>
+                <a u=image href="#"><img src="img/jetty.png" /></a>
+                <div u=caption t="*" class="captionOrange"  style="position:absolute; left:20px; top: 30px; width:300px; height:30px;"> 
+                Unwind by the Water
+                </div>
+            </div>
+        </div>
+        
+      <!-- Bullet Navigator Skin Begin -->
+        <style>
+            /* jssor slider bullet navigator skin 14 css */
+            /*
+            .jssorb14 div           (normal)
+            .jssorb14 div:hover     (normal mouseover)
+            .jssorb14 .av           (active)
+            .jssorb14 .av:hover     (active mouseover)
+            .jssorb14 .dn           (mousedown)
+            */
+            .jssorb14 div, .jssorb14 div:hover, .jssorb14 .av
+            {
+                background: url(img/b14.png) no-repeat;
+                overflow:hidden;
+                cursor: pointer;
+            }
+            .jssorb14 div { background-position: -9px -9px; }
+            .jssorb14 div:hover, .jssorb14 .av:hover { background-position: -39px -9px; }
+            .jssorb14 .av { background-position: -69px -9px; }
+            .jssorb14 .dn, .jssorb14 .dn:hover { background-position: -99px -9px; }
+        </style>
+        <!-- bullet navigator container -->
+        <div u="navigator" class="jssorb14" style="position: absolute; bottom: 16px; right: 6px;">
+            <!-- bullet navigator item prototype -->
+            <div u="prototype" style="POSITION: absolute; WIDTH: 12px; HEIGHT: 12px;"></div>
+        </div>
+        <!-- Bullet Navigator Skin End -->
+
+        
+        <!-- Arrow Navigator Skin Begin -->
+        <style>
+            /* jssor slider arrow navigator skin 05 css */
+            /*
+            .jssora05l              (normal)
+            .jssora05r              (normal)
+            .jssora05l:hover        (normal mouseover)
+            .jssora05r:hover        (normal mouseover)
+            .jssora05ldn            (mousedown)
+            .jssora05rdn            (mousedown)
+            */
+            .jssora05l, .jssora05r, .jssora05ldn, .jssora05rdn
+            {
+            	position: absolute;
+            	cursor: pointer;
+            	display: block;
+                background: url(img/a18.png) no-repeat;
+                overflow:hidden;
+            }
+            .jssora05l { background-position: -10px -40px; }
+            .jssora05r { background-position: -70px -40px; }
+            .jssora05l:hover { background-position: -130px -40px; }
+            .jssora05r:hover { background-position: -190px -40px; }
+            .jssora05ldn { background-position: -250px -40px; }
+            .jssora05rdn { background-position: -310px -40px; }
+        </style>
+        <!-- Arrow Left -->
+        <span u="arrowleft" class="jssora05l" style="width: 40px; height: 40px; top: 123px; left: 8px;">
+        </span>
+        <!-- Arrow Right -->
+        <span u="arrowright" class="jssora05r" style="width: 40px; height: 40px; top: 123px; right: 8px">
+        </span>
+    </div>
+    <!-- Jssor Slider End --><br />
+      <span class="font" style="font-size: 24px; font-weight: bold; font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;">Welcome to Wallaroo</span><span class="font" style="text-align:justify"><br />
+      Widely known as South Australia’s leading seaside resort, Wallaroo has all the amenities of a coastal paradise: boating, fishing, beaches, walks and a relaxed atmosphere. It’s the destination for having fun and unwinding by the water. Wallaroo’s vibrant community also preserves the past, thrives for the present and is developing for the future.</span></p>
+      <p class="font">The historic town takes pride in its rich industrial and maritime heritage. It had once been the second busiest port in South Australia for export of locally  mined and smelted copper. Now fascinating sights remain, along with a newly developed marina, which are both to be explored and enjoyed.<br />
+        <br />
+    Wallaroo is 160km north of Adelaide, on the east coast of Spencer Gulf.</p></td>
+          <td width="234" valign="top" style="padding-left:34px"><img src="img/map.PNG" width="200" height="495" /><table width="200" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="font" style="font-size:12px; padding-top:10px">
+            Follow the map above or click below to get directions via Google Maps.</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-top:15px"><a href="https://www.google.com.au/maps/dir/Adelaide+SA/Wallaroo+SA/@-34.4290515,137.5663574,9z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x6ab735c7c526b33f:0x4033654628ec640!2m2!1d138.5999594!2d-34.9286212!1m5!1m1!1s0x6ababa6ca92f3a15:0x5033654628efe50!2m2!1d137.6284649!2d-33.931984!3e0" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('get','','img/get1.png',1)"><img src="img/get.png" width="86" height="14" id="get" /></a></td>
+  </tr>
+          </table>
+</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+  </tr>
+</table>
+<img src="graphics/border1.png" width="1920" height="29" class="border" />
+</body>
+</html>
